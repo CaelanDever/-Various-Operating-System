@@ -25,9 +25,17 @@ vmstat: Provides information about processes, memory, paging, block I/O, traps, 
 
 vmstat 1 5  # Display system performance every 1 second for 5 iterations
 
+
+<img width="442" alt="ken" src="https://github.com/user-attachments/assets/44f41d96-3186-488e-99e2-d77f3729c384">
+
+
 iostat: Reports CPU statistics and I/O statistics for devices.
 
 iostat -x 1 5  # Detailed I/O statistics every 1 second for 5 iterations
+
+
+<img width="443" alt="krn" src="https://github.com/user-attachments/assets/2b2a461c-347b-448f-abec-a807125d7ee5">
+
 
 2. Analyze Existing Kernel Configuration
 
@@ -40,6 +48,10 @@ cat /etc/sysctl.conf
 /boot/grub2/grub.cfg: Contains boot loader settings and kernel parameters.
 
 cat /boot/grub2/grub.cfg
+
+
+<img width="442" alt="krnn" src="https://github.com/user-attachments/assets/580a8183-063e-44c3-a4b1-8eca182cfe30">
+
 
 3. Adjust CPU Scheduling and Process Management
 
@@ -59,6 +71,9 @@ echo "kernel.sched_min_granularity_ns = 1000000" >> /etc/sysctl.conf
 echo "kernel.sched_latency_ns = 20000000" >> /etc/sysctl.conf
 echo "kernel.sched_wakeup_granularity_ns = 1500000" >> /etc/sysctl.conf
 
+<img width="442" alt="krnn" src="https://github.com/user-attachments/assets/d2129e63-34fc-4385-9f9a-e0881c4b6ffb">
+
+
 Apply changes:
 
 sysctl -p
@@ -70,13 +85,16 @@ Modify memory management parameters:
 vm.swappiness: Controls the tendency of the kernel to swap.
 vm.dirty_ratio: Maximum percentage of system memory that can be filled with dirty pages.
 vm.dirty_background_ratio: Percentage of memory to start writing dirty pages to disk.
+
 Edit /etc/sysctl.conf:
 
-# Memory Management
-
+#Memory Management
 echo "vm.swappiness = 10" >> /etc/sysctl.conf
 echo "vm.dirty_ratio = 20" >> /etc/sysctl.conf
 echo "vm.dirty_background_ratio = 10" >> /etc/sysctl.conf
+
+<img width="275" alt="krnnn" src="https://github.com/user-attachments/assets/42ec3906-f364-4c58-9915-43f0460dacea">
+
 
 Apply changes:
 
