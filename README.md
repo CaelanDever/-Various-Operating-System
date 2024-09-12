@@ -118,12 +118,18 @@ Update GRUB configuration:
 
 grub2-mkconfig -o /boot/grub2/grub.cfg
 
+<img width="425" alt="vmcf" src="https://github.com/user-attachments/assets/472ea228-b59d-41cb-8cf8-ce6a0baeb084">
+
+
 Modify other parameters dynamically:
 
 # Disk I/O
 
 echo "blockdev --setra 8192 /dev/sda"  # Adjust read-ahead size
 echo "echo 512 > /sys/block/sda/queue/nr_requests"  # Set nr_requests
+
+<img width="437" alt="gurb" src="https://github.com/user-attachments/assets/c41c4719-ba77-4615-b57f-43a8caea09c3">
+
 
 # 6. Network Stack Configuration
 Optimize network settings:
@@ -142,9 +148,16 @@ echo "net.core.rmem_max = 16777216" >> /etc/sysctl.conf
 echo "net.ipv4.tcp_window_scaling = 1" >> /etc/sysctl.conf
 echo "net.core.netdev_max_backlog = 5000" >> /etc/sysctl.conf
 
+
+<img width="398" alt="nter" src="https://github.com/user-attachments/assets/c7419e41-694f-4b3b-b97d-597e60b9e709">
+
+
 Apply changes:
 
 sysctl -p
+
+<img width="237" alt="nett" src="https://github.com/user-attachments/assets/217ede6e-6897-4415-a06f-4797fb7a2b7e">
+
 
 # 7. Implement Changes Gradually
 Make changes one at a time and monitor the system’s performance after each adjustment. This approach helps identify which parameter changes have the most impact.
@@ -161,6 +174,9 @@ sysbench --test=cpu --cpu-max-prime=20000 run
 
 Compare results to ensure the changes have improved performance.
 
+<img width="376" alt="sysb" src="https://github.com/user-attachments/assets/127345e5-16bf-4d9f-b601-106f3b647ee7">
+
+
 # 9. Ongoing Monitoring and Maintenance
 
 Regularly monitor system performance and review the kernel parameters. 
@@ -170,6 +186,9 @@ Adjust as necessary based on changes in traffic patterns or application requirem
 Use monitoring tools like Nagios, Zabbix, or Prometheus.
 
 Review logs and performance metrics regularly.
+
+<img width="433" alt="vmvm" src="https://github.com/user-attachments/assets/8072a9e2-0cb9-48c2-82a4-33bbb34c4ae3">
+
 
 # Summary
 
@@ -330,17 +349,32 @@ Each parameter was adjusted to address specific performance issues identified th
 
 CPU Scheduling: Enhanced responsiveness and reduced context switching.
 
+
+<img width="444" alt="sar" src="https://github.com/user-attachments/assets/ef37bc7a-6880-49c5-a3e7-a9a0d98f5ae8">
+
+
 Memory Management: Improved memory usage efficiency and reduced swapping.
 
 Disk I/O: Increased throughput and reduced latency.
 
+
+<img width="440" alt="ioi" src="https://github.com/user-attachments/assets/18431c90-0743-44ef-aacc-112c1d6377ba">
+
+
 Network Stack: Improved network performance and packet handling.
+
+<img width="433" alt="nets" src="https://github.com/user-attachments/assets/70661292-498f-4529-8c09-91d5b5ecbc58">
+
+
 
 File System: Enhanced data integrity and file system performance.
 
 Kernel Security: Increased system security through address space randomization and stack protection.
 
 Virtual Memory: Ensured sufficient memory availability for critical tasks.
+
+<img width="318" alt="vmem" src="https://github.com/user-attachments/assets/72b5a46b-0694-43d2-940a-5c7e7fd08ac7">
+
 
 Network Performance: Improved TCP performance and reduced latency in connection setup.
 
